@@ -1,2 +1,2 @@
-# omnidirectional_robot
-Kinematic model, control algorithm in C++ and electronic design of an omnidirectional robot
+# learn_unit_test
+Repository to learn how to use unit tests in C++
