@@ -1,0 +1,9 @@
+Important concepts used in this project
+
+Structure:
+    The directory architecture called pitchfork was used to organize the project.
+    - https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs
+
+Unit test:
+    The CppUTest framework is used
+    - https://cpputest.github.io/

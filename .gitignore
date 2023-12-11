@@ -1,3 +1,7 @@
+# Directories
+test/objs
+test/lib
+
 # Prerequisites
 *.d
 
@@ -30,3 +34,4 @@
 *.exe
 *.out
 *.app
+Tester_tests
