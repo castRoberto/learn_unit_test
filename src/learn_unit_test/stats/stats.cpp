@@ -24,7 +24,7 @@ void copy_array (unsigned char* original, unsigned char* copy, const int len) {
 
 int find_median (unsigned char* ptr, const int len) {
 
-    unsigned char tmp_data[len];
+    unsigned char* tmp_data = new unsigned char[len];
 
     int median = 0;
 
@@ -42,6 +42,10 @@ int find_median (unsigned char* ptr, const int len) {
 
     }
 
+    delete[] tmp_data;
+
+    tmp_data = NULL;
+
     return median;
 
 }
@@ -52,7 +56,7 @@ int find_mean (unsigned char* ptr, const int len) {
     int i;
     int average = 0;
 
-    if (ptr == NULL | len <= 0) { return 0; }
+    if ((ptr == NULL) | (len <= 0)) { return 0; }
 
     for (i = 0; i < len; i++) {
 
@@ -68,26 +72,42 @@ int find_mean (unsigned char* ptr, const int len) {
 
 int find_maximum (unsigned char* ptr, const int len) {
 
-    unsigned char tmp_data[len];
+    unsigned char* tmp_data = new unsigned char[len];
+
+    unsigned char max = 0;
 
     copy_array (ptr, tmp_data, len);
 
     sort_array (tmp_data, len);
 
-    return (tmp_data[0]);
+    max = tmp_data[0];
+
+    delete[] tmp_data;
+
+    tmp_data = NULL;
+
+    return (max);
 
 }
 
 
 int find_minimum (unsigned char* ptr, const int len) {
 
-    unsigned char tmp_data[len];
+    unsigned char* tmp_data = new unsigned char[len];
+
+    unsigned char min = 0;
 
     copy_array (ptr, tmp_data, len);
 
     sort_array (tmp_data, len);
 
-    return (tmp_data[len - 1]);
+    min = tmp_data[len - 1];
+
+    delete[] tmp_data;
+
+    tmp_data = NULL;
+
+    return (min);
 
 }
 
@@ -95,10 +115,11 @@ int find_minimum (unsigned char* ptr, const int len) {
 void merge (unsigned char* ptr, int p, int q, int r) {
 
     // Create L ← A[p..q] and R ← A[q+1..r]
-    int n1 = q - p + 1;
-    int n2 = r - q;
+    const int n1 = q - p + 1;
+    const int n2 = r - q;
 
-    unsigned char L[n1], R[n2];
+    unsigned char* L = new unsigned char [n1]; 
+    unsigned char* R = new unsigned char [n2];
 
     for (int i = 0; i < n1; i++) {
 
@@ -154,6 +175,12 @@ void merge (unsigned char* ptr, int p, int q, int r) {
         k++;
 
     }
+
+    delete[] L;
+    delete[] R;
+
+    L = NULL;
+    R = NULL;
 
 }
 

@@ -15,14 +15,25 @@
 //extern "C" {
 
 #include "stats/stats.h"
+
+#include "common/log.h"
     
 //}
 
 int main (int argc, char* argv []) {
 
-    print_array (numbers, SIZE);
+    // print_array (numbers, SIZE);
 
-    print_statistics (numbers, SIZE);
+    // print_statistics (numbers, SIZE);
+
+     const char *cadena = "Hola, mundo!";
+
+    // Calcular la longitud de la cadena
+    size_t longitud = strlen(cadena);
+
+    // Imprimir la longitud de la cadena
+    //printf("Longitud de la cadena: %zu\n", longitud);
+    LOG_SIZE_T(longitud);
 
     return 0;
 }

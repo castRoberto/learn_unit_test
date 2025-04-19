@@ -43,6 +43,7 @@ C_RELEASE_OBJS = $(patsubst $(DEBUG_DIR)%, $(RELEASE_DIR)%, $(C_DEBUG_OBJS))
 COMMOMN_FLAGS = \
 	-MD \
 	-Wall \
+	-Werror \
 	-pedantic \
 	-I$(SRC_DIR)
 
